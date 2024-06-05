@@ -1,8 +1,12 @@
-
-import React from 'react'
+import React from "react";
+import { Logo } from "./logo";
+import { Nav } from "./nav";
 
 export const Header = () => {
   return (
-    <div>header</div>
-  )
-}
+    <header>
+      <Logo boxOn />
+      <Nav />
+    </header>
+  );
+};

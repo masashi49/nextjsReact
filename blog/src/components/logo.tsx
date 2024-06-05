@@ -1,6 +1,9 @@
 import Link from "next/link";
 import React from "react";
 
-export const Logo = () => {
-  return <Link href="/">CIBE</Link>;
+interface LogoProps {
+  boxOn: boolean;
+}
+export const Logo = ({ boxOn = false }: LogoProps) => {
+  return <Link href="/">CIBE {boxOn ? "true" : "false"}</Link>;
 };
