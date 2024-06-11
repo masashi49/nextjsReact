@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React from "react";
+import eyeCatch from "../../public/heroCat.webp";
 
 interface HeroProps {
   title: string;
@@ -11,7 +13,11 @@ export const Hero = ({ title, subtitle, imageOn = false }: HeroProps) => {
     <div>
       <h1>{title}</h1>
       <p>{subtitle}</p>
-      {imageOn && <figure>画像</figure>}
+      {imageOn && (
+        <figure className="h-44 relative">
+          <Image src={eyeCatch} alt="heroCat" layout="fill" objectFit="cover" />
+        </figure>
+      )}
     </div>
   );
 };
