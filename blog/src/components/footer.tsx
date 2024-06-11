@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
 
@@ -6,7 +7,10 @@ export const Footer = () => {
     <div className="bg-slate-400">
       <ul>
         <li>
-          <Link href="/">TOP</Link> {/* aタグ不要 */}
+          <Link href="/">
+            <FontAwesomeIcon icon="house-chimney" />家
+          </Link>
+          {/* aタグ不要 */}
         </li>
         <li>
           <Link href="/about">ABOUT</Link>

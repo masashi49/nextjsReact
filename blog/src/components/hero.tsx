@@ -14,8 +14,8 @@ export const Hero = ({ title, subtitle, imageOn = false }: HeroProps) => {
       <h1>{title}</h1>
       <p>{subtitle}</p>
       {imageOn && (
-        <figure className="h-44 relative">
-          <Image src={eyeCatch} alt="heroCat" layout="fill" objectFit="cover" />
+        <figure className="p-4 relative">
+          <Image src={eyeCatch} alt="heroCat" width={100} height={200} />
         </figure>
       )}
     </div>
