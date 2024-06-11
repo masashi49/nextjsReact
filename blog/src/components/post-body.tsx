@@ -5,5 +5,5 @@ export const PostBody = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <div>{children}</div>;
+  return <article>{children}</article>;
 };

@@ -4,7 +4,7 @@ import { Nav } from "./nav";
 
 export const Header = () => {
   return (
-    <header>
+    <header className="bg-slate-200">
       <Logo boxOn />
       <Nav />
     </header>
