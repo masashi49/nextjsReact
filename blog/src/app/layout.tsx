@@ -13,6 +13,7 @@ library.add(faHouseChimney, faSun, faTwitter, faFacebook);
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { Head } from "./head";
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,7 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
+      <Head />
       <body className={inter.className}>
         <Header />
         <main className="bg-rose-50">{children}</main>

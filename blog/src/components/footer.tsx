@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
+import { Social } from "./Social";
 
 export const Footer = () => {
   return (
@@ -16,6 +17,7 @@ export const Footer = () => {
           <Link href="/about">ABOUT</Link>
         </li>
       </ul>
+      <Social iconSize="text-xl" />
     </div>
   );
 };
