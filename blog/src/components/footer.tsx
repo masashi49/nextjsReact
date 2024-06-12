@@ -5,16 +5,18 @@ import { Social } from "./Social";
 
 export const Footer = () => {
   return (
-    <div className="bg-slate-400">
-      <ul>
+    <div className="bg-slate-400 p-4">
+      <ul className="flex">
         <li>
           <Link href="/">
             <FontAwesomeIcon icon="house-chimney" />家
           </Link>
-          {/* aタグ不要 */}
         </li>
         <li>
-          <Link href="/about">ABOUT</Link>
+          <Link href="/about">
+            <FontAwesomeIcon icon="house-chimney" />
+            ABOUT
+          </Link>
         </li>
       </ul>
       <Social iconSize="text-xl" />

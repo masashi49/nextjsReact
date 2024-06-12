@@ -1,9 +1,9 @@
 import React, { ReactHTMLElement } from "react";
 
-interface DecorationProps {
+interface ContainerProps {
   children: React.ReactNode;
 }
 
-export const Decoration = ({ children }: DecorationProps) => {
+export const Container = ({ children }: ContainerProps) => {
   return <div>{children}</div>;
 };

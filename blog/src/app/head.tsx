@@ -4,9 +4,7 @@ export const Head = () => {
   return (
     <head>
       <meta charSet="utf-8" />
-      <title>ページタイトル|練習サイト</title>
       <meta property="og:title" content="ページタイトル｜練習サイト" />
-      <meta name="description" content="ページの説明" />
       <meta property="og:desctiption" content="ページの説明" />
       <link rel="canonical" href="https://サイトurl/ページのパス" />
       <meta property="og:url" content="https://サイトurl/ページのパス" />

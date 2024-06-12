@@ -14,7 +14,7 @@ const Socials = [
 
 export const Social = ({ iconSize = "initial" }) => {
   return (
-    <ul className={`flex ${iconSize}`}>
+    <ul className={`flex ${iconSize} mt-4 gap-4`}>
       {Socials.map(({ name, iconName, url }) => (
         <li key={name}>
           <a href={url}>
