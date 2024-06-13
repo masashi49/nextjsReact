@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Html } from "next/document";
 
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -14,7 +15,7 @@ library.add(faHouseChimney, faSun, faTwitter, faFacebook);
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import { Head } from "./head";
+import { Meta } from "./meta";
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,13 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <Head />
+    <Html lang="ja">
+      <Meta />
       <body className={inter.className}>
         <Header />
         <main className="bg-rose-50">{children}</main>
         <Footer />
       </body>
-    </html>
+    </Html>
   );
 }

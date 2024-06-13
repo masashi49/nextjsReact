@@ -1,10 +1,21 @@
 import React from "react";
 
-export const Head = () => {
+import { siteMeta } from "@/lib/constants";
+const {
+  siteTitle,
+  siteDesc,
+  siteLocale,
+  siteIcon,
+  siteType,
+  siteUrl,
+  sitelang,
+} = siteMeta;
+
+export const Meta = () => {
   return (
     <head>
       <meta charSet="utf-8" />
-      <meta property="og:title" content="ページタイトル｜練習サイト" />
+      <meta property="og:title" content="ページタイトル" />
       <meta property="og:desctiption" content="ページの説明" />
       <link rel="canonical" href="https://サイトurl/ページのパス" />
       <meta property="og:url" content="https://サイトurl/ページのパス" />
