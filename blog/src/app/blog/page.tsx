@@ -1,4 +1,3 @@
-import { Decoration } from "@/components/Container";
 import EachPost from "@/components/EachPost";
 import Image from "next/image";
 import Link from "next/link";

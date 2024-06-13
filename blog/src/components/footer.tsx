@@ -20,6 +20,7 @@ export const Footer = () => {
         </li>
       </ul>
       <Social iconSize="text-xl" />
+      <small>https://github.com/ebisucom/next-react-website/tree/main</small>
     </div>
   );
 };

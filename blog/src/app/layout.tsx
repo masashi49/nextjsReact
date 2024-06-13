@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Html } from "next/document";
 
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -31,13 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Html lang="ja">
+    <html lang="ja">
       <Meta />
       <body className={inter.className}>
         <Header />
         <main className="bg-rose-50">{children}</main>
         <Footer />
       </body>
-    </Html>
+    </html>
   );
 }
