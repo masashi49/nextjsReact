@@ -6,7 +6,7 @@ import { PostBody } from "@/components/post-body";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "アバウトページ",
+  title: "アバウトページ-",
   description: "アバウトページのdescription",
 };
 
