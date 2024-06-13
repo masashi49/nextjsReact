@@ -21,6 +21,8 @@ export const Footer = () => {
       </ul>
       <Social iconSize="text-xl" />
       <small>https://github.com/ebisucom/next-react-website/tree/main</small>
+      <br />
+      <small>https://nextjs-react-1wia.vercel.app/</small>
     </div>
   );
 };
