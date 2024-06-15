@@ -4,12 +4,14 @@ import {
   faTwitter,
   faFacebook,
   faGithub,
+  faWindows,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Socials = [
   { name: "Twitter", iconName: faTwitter, url: "https://twitter.com" },
   { name: "Facebook", iconName: faFacebook, url: "https://www.facebook.com" },
   { name: "GitHub", iconName: faGithub, url: "https://github.com" },
+  { name: "any", iconName: faWindows, url: "https://github.com" },
 ];
 
 export const Social = ({ iconSize = "initial" }) => {
