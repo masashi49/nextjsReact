@@ -1,5 +1,10 @@
 import { createClient } from "microcms-js-sdk";
 
+export interface DataType {
+ id: string
+ title: string
+}
+
 const serviceDomain = process.env.SERVICE_DOMAIN;
 const apiKey = process.env.API_KEY;
 
