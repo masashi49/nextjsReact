@@ -4,7 +4,8 @@ import { client, DataType, getPostBySlug } from "@/lib/api";
 export default async function SchedulePage() {
   const slug = "schedule";
   const datas = await getPostBySlug(slug);
-  console.log(datas);
+
+  if (datas == null) return null;
 
   return (
     <div>

@@ -6,6 +6,8 @@ export interface DataType {
  title: string
 }
 
+
+
 const serviceDomain = process.env.SERVICE_DOMAIN;
 const apiKey = process.env.API_KEY;
 
@@ -19,15 +21,24 @@ export const client = createClient({
 });
 
 
-export const getPostBySlug =  async (slug : string) => {
+
+interface Post {
+  title: string;
+  id:number
+  // いくつもある
+}
+
+// type PostBySlug = Promise<Post | undefined>;
+//export const getPostBySlug: (slug: string) => PostBySlug = async (slug) => {
+export const getPostBySlug = async (slug: string): Promise<Post | undefined> => {
     try {
     const post = await client.get({
-        endpoint: `blogs`,
-        queries : {filters : `slug[equals]${slug}`}
+      endpoint: 'blogs',
+      queries: { filters: `slug[equals]${slug}` }
     });
-    console.log(post.contents)
-    return post.contents[0]
-    } catch (err) {
-        console.log(err)
-    }
-}
+    return post.contents[0];
+  } catch (err) {
+    console.log(err);
+    return undefined;
+  }
+};
