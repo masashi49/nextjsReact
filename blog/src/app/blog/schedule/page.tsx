@@ -2,6 +2,8 @@ import React from "react";
 import { client, DataType } from "@/lib/api";
 
 export default async function SchedulePage() {
+
+  
   const data = await client.get({ endpoint: `blogs` }); // client.getはpromiseが解決されたものが帰るので、awaitすれば直接データ取れる。
   const items = data.contents.map((contents: DataType) => ({
     id: contents.id,
