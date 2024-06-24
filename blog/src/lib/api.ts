@@ -19,7 +19,7 @@ export const client = createClient({
 });
 
 
-const getPostBySlug =  async ({slug}:{slug : string}) => {
+export const getPostBySlug =  async (slug : string) => {
     try {
     const post = await client.get({
         endpoint: `blogs`,

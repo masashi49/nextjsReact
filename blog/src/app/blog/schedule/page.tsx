@@ -1,20 +1,14 @@
 import React from "react";
-import { client, DataType } from "@/lib/api";
+import { client, DataType, getPostBySlug } from "@/lib/api";
 
 export default async function SchedulePage() {
-
-  
-  const data = await client.get({ endpoint: `blogs` }); // client.getはpromiseが解決されたものが帰るので、awaitすれば直接データ取れる。
-  const items = data.contents.map((contents: DataType) => ({
-    id: contents.id,
-    title: contents.title,
-  }));
+  const slug = "schedule";
+  const datas = await getPostBySlug(slug);
+  console.log(datas);
 
   return (
     <div>
-      <h1>記事のタイトル</h1>
-
-      {/* <pre>{JSON.stringify(items, null, 2)}</pre> */}
+      <h1>{datas.title}</h1>
     </div>
   );
 }
