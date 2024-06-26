@@ -23,8 +23,14 @@ export const client = createClient({
 
 
 interface Post {
-  title: string;
-  id:number
+  title: string
+  subTitle : string
+  publishDate:string
+  eyecatch:{
+    url:string
+    height:number
+    width:number
+  }
   // いくつもある
 }
 
