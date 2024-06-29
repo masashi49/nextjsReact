@@ -31,6 +31,7 @@ interface Post {
     height:number
     width:number
   }
+  content:string
   // いくつもある
 }
 

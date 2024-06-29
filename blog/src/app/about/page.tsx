@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import eyeCatch from "../../../public/aboutCat.webp";
 import { Contact } from "@/components/contact";
-import { PostBody } from "@/components/post-body";
+import { PostBody } from "@/components/PostBody";
 import Image from "next/image";
 
 export const metadata: Metadata = {
