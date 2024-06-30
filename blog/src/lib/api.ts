@@ -32,6 +32,7 @@ interface Post {
     width:number
   }
   content:string
+  categories:[]
   // いくつもある
 }
 
