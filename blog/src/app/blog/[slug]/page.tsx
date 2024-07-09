@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { getPostBySlug } from "@/lib/api";
+import { Slugs, getAllSlugs, getPostBySlug } from "@/lib/api";
 import { PostHeader } from "@/components/postHeader";
 import Image from "next/image";
 import { PostBody } from "@/components/PostBody";
@@ -27,13 +27,19 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function SchedulePage() {
-  const slug = "schedule";
-  const datas = await getPostBySlug(slug);
+function makeSlugPath(slugs: Slugs[] | undefined) {
+  if (!slugs) return "blog/";
+  return slugs.map(({ slug }) => `blog/${slug}`);
+}
 
+export default async function Post({ params }: { params: { slug: string } }) {
+  const datas = await getPostBySlug(params.slug);
   if (datas == null) return null;
 
-  console.log(datas);
+  const slugs = await getAllSlugs(100);
+  const slugPaths = makeSlugPath(slugs);
+
+  console.log(slugPaths);
 
   const { title, subTitle, publishDate, eyecatch, content, categories } = datas;
 
@@ -41,14 +47,16 @@ export default async function SchedulePage() {
     <div>
       <PostHeader title={title} subTitle={subTitle} publish={publishDate} />
       <PostCategories categories={categories} />
-      <figure>
-        <Image
-          src={eyecatch.url}
-          alt="画像"
-          height={eyecatch.height}
-          width={eyecatch.width}
-        />
-      </figure>
+      {eyecatch && (
+        <figure>
+          <Image
+            src={eyecatch.url}
+            alt="画像"
+            height={eyecatch.height}
+            width={eyecatch.width}
+          />
+        </figure>
+      )}
       <PostBody>
         <ConvertBody contentHtml={content} />
       </PostBody>

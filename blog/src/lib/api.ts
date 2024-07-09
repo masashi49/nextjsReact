@@ -50,3 +50,22 @@ export const getPostBySlug = async (slug: string): Promise<Post | undefined> => 
     return undefined;
   }
 };
+
+
+export type Slugs = {
+   title: string,
+   slug: string
+}
+
+export const getAllSlugs = async (limit:number = 100):Promise<Slugs[]|undefined> => {
+    try {
+    const slugs = await client.get({
+      endpoint: 'blogs',
+      queries: { fields : "title,slug",orders:"-publisDate",limit: limit }
+    });
+    return slugs.contents;
+  } catch (err) {
+    console.log(err);
+    return undefined;
+  }
+}
