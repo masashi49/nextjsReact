@@ -1,15 +1,24 @@
-import React from 'react';
 import { Slugs } from './api';
 
-export const prevNextPost = (allSlugs: Slugs[], currentSlug: string) => {
+export const prevNextPost = (
+  allSlugs: Slugs[] | undefined,
+  currentSlug: string
+) => {
+  if (!allSlugs)
+    return [
+      { title: '', slug: '' },
+      { title: '', slug: '' },
+    ];
   const numberOfPost = allSlugs.length;
 
-  const index = allSlugs.findIndex(({ slug }) => slug === currentSlug);
+  const slugIndex = allSlugs.findIndex(({ slug }) => slug === currentSlug);
 
   const prevPost =
-    index + 1 === numberOfPost ? { title: '', slug: '' } : allSlugs[index + 1]; // 数字が多いほうが古い
-  const prevNextPostPost =
-    index === 0 ? { title: '', slug: '' } : allSlugs[index - 1];
+    slugIndex + 1 === numberOfPost
+      ? { title: '', slug: '' }
+      : allSlugs[slugIndex + 1]; // 数字が多いほうが古い
+  const nextPost =
+    slugIndex === 0 ? { title: '', slug: '' } : allSlugs[slugIndex - 1];
 
-  return [prevPost, prevNextPostPost];
+  return [prevPost, nextPost];
 };
